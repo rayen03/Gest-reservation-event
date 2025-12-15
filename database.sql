@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS reservations;
 DROP TABLE IF EXISTS events;
 DROP TABLE IF EXISTS admin;
 
--- events
+
 CREATE TABLE events (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
@@ -19,7 +19,6 @@ CREATE TABLE events (
     INDEX idx_date (date)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- reservations
 CREATE TABLE reservations (
     id INT AUTO_INCREMENT PRIMARY KEY,
     event_id INT NOT NULL,
@@ -31,7 +30,6 @@ CREATE TABLE reservations (
     INDEX idx_event_id (event_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Table: admin
 CREATE TABLE admin (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(100) NOT NULL UNIQUE,
@@ -39,12 +37,10 @@ CREATE TABLE admin (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- default admin user
 
 INSERT INTO admin (username, password_hash) 
 VALUES ('admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');
 
---test data
 INSERT INTO events (title, description, date, location, seats, image) VALUES
 ('Conference Tech 2025', 'Une conférence internationale sur les dernières innovations technologiques et l''intelligence artificielle.', '2025-12-15 09:00:00', 'Centre de Conférence, Tunis', 150, 'tech-conference.jpg'),
 ('Festival de Musique', 'Un festival de musique en plein air avec des artistes locaux et internationaux.', '2025-12-20 18:00:00', 'Parc National, Carthage', 500, 'music-festival.jpg'),

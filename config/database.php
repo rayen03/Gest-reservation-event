@@ -1,7 +1,5 @@
 <?php
-/**
- * MySQL db config
- */
+
 
 class Database {
     private $host = 'localhost';
@@ -11,10 +9,7 @@ class Database {
     private $charset = 'utf8mb4';
     public $conn;
 
-    /**
-     * db conn 
-     * @return PDO|null
-     */
+    
     public function getConnection() {
         $this->conn = null;
 
