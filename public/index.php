@@ -1,8 +1,4 @@
 <?php
-/**
- * Entry point 
- */
-
 
 session_start();
 
@@ -14,17 +10,14 @@ define('BASE_PATH', dirname(__DIR__));
 
 $routes = require_once BASE_PATH . '/config/routes.php';
 
-// Get  URI
 $requestUri = $_SERVER['REQUEST_URI'];
-$requestUri = strtok($requestUri, '?'); // Remove query string
+$requestUri = strtok($requestUri, '?'); 
 $requestUri = trim($requestUri, '/');
 
-// Default route
 if (empty($requestUri)) {
     $requestUri = 'events';
 }
 
-// Find  route
 if (isset($routes[$requestUri])) {
     $route = $routes[$requestUri];
     $controllerName = $route['controller'];
