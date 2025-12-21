@@ -11,7 +11,7 @@
         <div class="container">
             <div class="header-content">
                 <h1 class="site-logo">
-                    <a href="/events">🎉 MiniEvent</a>
+                    <a href="/events"> MiniEvent</a>
                 </h1>
                 <nav class="main-nav">
                     <a href="/events" class="nav-link">Événements</a>

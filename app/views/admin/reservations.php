@@ -5,7 +5,7 @@ include __DIR__ . '/../partials/header.php';
 
 <div class="container">
     <div class="admin-header">
-        <h2>📋 Réservations pour : <?php echo htmlspecialchars($event['title']); ?></h2>
+        <h2> Réservations pour : <?php echo htmlspecialchars($event['title']); ?></h2>
         <a href="/admin/dashboard" class="btn btn-secondary">
             ← Retour au dashboard
         </a>
